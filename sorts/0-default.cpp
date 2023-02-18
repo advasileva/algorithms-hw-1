@@ -1,5 +1,5 @@
 #include <algorithm>
 
-void default0(int *arr, int n) {
+void build_in(int *arr, int n) {
     std::sort(arr, arr + n);
 }

@@ -41,7 +41,7 @@ cmake-build*/
 *.iws
 
 # IntelliJ
-out/
+results/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -102,7 +102,7 @@ fabric.properties
 
 # Executables
 *.exe
-*.out
+*.results
 *.app
 
 
@@ -119,3 +119,5 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
+
+plots.*
