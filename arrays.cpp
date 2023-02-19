@@ -48,3 +48,8 @@ int* reversed() {
     }
     return arr;
 }
+
+int *smallRange_ = smallRange();
+int *bigRange_ = bigRange();
+int *almostSorted_ = almostSorted();
+int *reversed_ = reversed();

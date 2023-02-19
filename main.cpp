@@ -55,10 +55,10 @@ bool isTimeMeasurement = true;
 
 // Записывает результаты измерений в нужный файл
 void record(int x) {
-    results << sort_name << separator
-        << array_name << separator
-        << array_size << separator
-        << x << "\n";
+//    results << sort_name << separator
+//        << array_name << separator
+//        << array_size << separator
+//        << x << "\n";
 }
 
 // Выводит массив в поток вывода (файл input.txt или output.txt)
@@ -133,17 +133,15 @@ void iterateSizes(int (*func)(int *, int), int* arr) {
 
 // Итерация по типам массивов
 void iterateArraysTypes(int (*func)(int *, int)) {
-    pair<int* (*)(), const char *> arrays[] = {
-            make_pair(smallRange, "small-range"),
-            make_pair(bigRange, "big-range"),
-            make_pair(almostSorted, "almost-sorted"),
-            make_pair(reversed, "reversed"),
+    pair<int*, const char *> arrays[] = {
+            make_pair(smallRange_, "small-range"),
+            make_pair(bigRange_, "big-range"),
+            make_pair(almostSorted_, "almost-sorted"),
+            make_pair(reversed_, "reversed"),
     };
     for (auto & array : arrays) {
         array_name = array.second;
-        int *arr = array.first();
-        iterateSizes(func, arr);
-        delete[] arr;
+        iterateSizes(func, array.first);
     }
 }
 
@@ -183,9 +181,9 @@ int main() {
 
     isTimeMeasurement = true;
     isSmallRange = true;
-//    executeCase("../data/time-small.csv");
+    executeCase("../data/time-small.csv");
     isSmallRange = false;
-//    executeCase("../data/time-large.csv");
+    executeCase("../data/time-large.csv");
 
     isTimeMeasurement = false;
     isSmallRange = true;
