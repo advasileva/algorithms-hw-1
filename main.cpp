@@ -55,10 +55,10 @@ bool isTimeMeasurement = true;
 
 // Записывает результаты измерений в нужный файл
 void record(int x) {
-//    results << sort_name << separator
-//        << array_name << separator
-//        << array_size << separator
-//        << x << "\n";
+    results << sort_name << separator
+        << array_name << separator
+        << array_size << separator
+        << x << "\n";
 }
 
 // Выводит массив в поток вывода (файл input.txt или output.txt)
