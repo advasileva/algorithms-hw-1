@@ -8,6 +8,13 @@
 #include "sorts/4-bubble-iverson-2.cpp"
 #include "sorts/5-insertion.cpp"
 #include "sorts/6-bin-insertion.cpp"
+#include "sorts/7-count.cpp"
+#include "sorts/8-radix.cpp"
+#include "sorts/9-merge.cpp"
+#include "sorts/10-quick.cpp"
+#include "sorts/11-heap.cpp"
+#include "sorts/12-shell-ciura.cpp"
+#include "sorts/13-shell.cpp"
 #include "arrays.cpp"
 
 /*
@@ -46,7 +53,12 @@ void print(int* arr, int n, std::ofstream *stream) {
 void check(int* arr, int n) {
     for (int i = 0; i < n - 1; ++i) {
         if (arr[i] > arr[i + 1]) {
+            for (int i = 0; i < n; ++i) {
+                std::cerr << arr[i] << ' ';
+            }
+            std::cerr << '\n';
             throw std::invalid_argument("sort " + sort_name + " incorrect");
+
         }
     }
 }
@@ -106,7 +118,13 @@ void iterateSorts() {
             make_pair(bubbleIverson2, "bubble-iverson-2"),
             make_pair(insertion, "insertion"),
             make_pair(binInsertion, "bin insertion"),
-            make_pair(binInsertion, "bin insertion"),
+            make_pair(counting, "counting"),
+            make_pair(radix, "radix"),
+            make_pair(mergeSort, "merge"),
+            make_pair(quick, "quick"),
+            make_pair(heap, "heap"),
+            make_pair(shellCiura, "shell ciura"),
+            make_pair(shell, "shell"),
     };
     for (auto & sort : sorts) {
         sort_name = sort.second;
